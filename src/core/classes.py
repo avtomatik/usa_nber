@@ -14,7 +14,7 @@ from typing import Any, Union
 import pandas as pd
 
 
-class Token(str, Enum):
+class Dataset(str, Enum):
 
     def __new__(cls, value: str, skiprows: Union[int, None], parse_dates: Union[bool, None]):
 

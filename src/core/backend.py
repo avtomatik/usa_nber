@@ -11,9 +11,7 @@ from pandas import DataFrame
 
 
 def transform_agg(df: DataFrame, agg: str) -> DataFrame:
-    if agg == 'mean':
-        return df.groupby(df.columns[0]).mean()
-    return df.groupby(df.columns[0]).sum()
+    return df.groupby(df.columns[0]).agg(agg)
 
 
 def plot_usa_nber(df_naics: DataFrame, df_sic: DataFrame, agg: str) -> None:
