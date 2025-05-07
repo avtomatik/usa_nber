@@ -8,10 +8,10 @@ Created on Sun Aug  6 12:40:18 2023
 
 
 from enum import Enum
-from pathlib import Path
 from typing import Any, Union
 
 import pandas as pd
+from core.config import DATA_DIR
 
 
 class Dataset(str, Enum):
@@ -35,7 +35,7 @@ class Dataset(str, Enum):
         START = 5
 
         kwargs = {
-            'filepath_or_buffer': Path(__file__).parent.parent.parent.joinpath('data').joinpath(self.value),
+            'filepath_or_buffer': DATA_DIR.joinpath(self.value),
             'skiprows': self.skiprows,
             'parse_dates': self.parse_dates
         }
@@ -54,7 +54,7 @@ class Dataset(str, Enum):
         }
 
         return {
-            'filepath_or_buffer': Path(__file__).parent.parent.parent.joinpath('data').joinpath(self.value),
+            'filepath_or_buffer': DATA_DIR.joinpath(self.value),
             'skiprows': self.skiprows,
             'parse_dates': self.parse_dates,
             'header': 0,

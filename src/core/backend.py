@@ -7,22 +7,22 @@ Created on Sun Aug  6 12:30:47 2023
 """
 
 import matplotlib.pyplot as plt
-from pandas import DataFrame
+import pandas as pd
 
 
-def transform_agg(df: DataFrame, agg: str) -> DataFrame:
+def transform_agg(df: pd.DataFrame, agg: str) -> pd.DataFrame:
     return df.groupby(df.columns[0]).agg(agg)
 
 
-def plot_usa_nber(df_naics: DataFrame, df_sic: DataFrame, agg: str) -> None:
+def plot_usa_nber(df_naics: pd.DataFrame, df_sic: pd.DataFrame, agg: str) -> None:
     """
     Project V: Plot USA NBER Data
 
     Parameters
     ----------
-    df_naics : DataFrame
+    df_naics : pd.DataFrame
         DESCRIPTION.
-    df_sic : DataFrame
+    df_sic : pd.DataFrame
         DESCRIPTION.
     agg : str
         DESCRIPTION.
